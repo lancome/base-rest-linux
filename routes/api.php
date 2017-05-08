@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,7 +12,6 @@ use Illuminate\Http\Request;
 */
 
 Route::middleware('auth.basic')->prefix('v1')->group(function () {
-    // Route::resource('rooms','RoomController');
     Route::get('rooms','RoomController@allRooms');
     Route::get('rooms/{room}','RoomController@currentRoom');
     Route::get('rooms/{room}/{sensor}','RoomController@currentSensor');

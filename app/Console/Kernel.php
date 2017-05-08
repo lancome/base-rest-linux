@@ -38,11 +38,17 @@ class Kernel extends ConsoleKernel
 							
 				for ($i = 2; $i < count($text1); $i=$i+3)
 				{
-					$sensor = new Sensor;
+					/*$sensor = new Sensor;
 					$sensor->room_id = Room::where("name", $text1[$i-2])->first()->id;
 					$sensor->name = $text1[$i-1];
 					$sensor->result = (float) $text1[$i];
-					$sensor->save();
+					$sensor->save();*/
+					
+					$room = Room::where('name', $text1[$i-2])->first();
+                    $sensor = $room->sensors()->create([
+                        'name' => $text1[$i-1],
+                        'result' => (float) $text1[$i],
+                    ]);
 				}
 			}		
 		})->everyFiveMinutes();
