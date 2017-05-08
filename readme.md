@@ -5,7 +5,7 @@
 - composer install
 - cp .env.example .env - and add your db
 - php artisan cache:clear
-- php artisan migrate
+- php artisan migrate --seed
 - php artisan key:generate
 
 ## About Laravel

@@ -45,7 +45,7 @@ class Kernel extends ConsoleKernel
 					$sensor->save();
 				}
 			}		
-		})->everyMinute();
+		})->everyFiveMinutes();
     }
     /**
      * Register the Closure based commands for the application.
